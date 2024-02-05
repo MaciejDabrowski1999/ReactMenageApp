@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import ProjectSideBar from './components/ProjectSideBar.'
-import ProjectInputs from './components/ProjectInputs'
+import NewProject from './components/NewProject'
 
 function App() {
 	const [project, setProject] = useState([])
@@ -12,10 +12,9 @@ function App() {
 	// ]
 
 	return (
-		<main>
-			<h1 className="my-8 text-center text-5xl font-bold">Hello World</h1>
+		<main className="h-screen my-8 flex gap-8">
 			<ProjectSideBar />
-			<ProjectInputs newProject={setProject} />
+			<NewProject newProject={setProject} />
 		</main>
 	)
 }
