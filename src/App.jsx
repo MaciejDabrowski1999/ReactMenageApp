@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Tab from './components/Tab'
+import ProjectSideBar from './components/ProjectSideBar.'
 import ProjectInputs from './components/ProjectInputs'
 
 function App() {
@@ -14,8 +14,8 @@ function App() {
 	return (
 		<main>
 			<h1 className="my-8 text-center text-5xl font-bold">Hello World</h1>
-			<Tab />
-			<ProjectInputs newProject={setProject}/> 
+			<ProjectSideBar />
+			<ProjectInputs newProject={setProject} />
 		</main>
 	)
 }
