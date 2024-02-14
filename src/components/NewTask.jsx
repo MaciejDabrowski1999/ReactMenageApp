@@ -1,11 +1,14 @@
 import { useState } from 'react'
 
-export default function NewTask() {
-	const [enteredTask, setEnteredTask] = useState()
+export default function NewTask({ onAdd }) {
+	const [enteredTask, setEnteredTask] = useState('')
 
 	function handleEnteredTask(event) {
 		setEnteredTask(event.target.value)
-		console.log(enteredTask)
+	}
+	function handleClick() {
+		onAdd(enteredTask)
+		setEnteredTask('')
 	}
 
 	return (
@@ -16,7 +19,9 @@ export default function NewTask() {
 				className="w-64 px-1 py-1 rounded-sm bg-stone-200"
 				value={enteredTask}
 			/>
-			<button className="text-stone-600 hover:text-stone-950">Add task</button>
+			<button onClick={handleClick} className="text-stone-600 hover:text-stone-950">
+				Add task
+			</button>
 		</div>
 	)
 }
